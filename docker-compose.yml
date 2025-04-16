@@ -1,0 +1,11 @@
+services:
+  qbittor:
+    image: qbittor
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./qBittorrent:/var/lib/qbittorrent/.config/qBittorrent/
+      - /tmp:/TORRENT
+    ports:
+      - "8080:8080"
