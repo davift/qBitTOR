@@ -1,6 +1,6 @@
 # qBitTOR = qBitTorrent Web-UI + Tor Network
 
-This project provides a lightweight, ephemeral environment for securely downloading files via qBitTorrent over the Tor network. The downloaded files are stored in `/tmp` and the container is designed to self-destruct after use, leaving only the configuration.
+This project provides a lightweight, ephemeral environment for securely downloading files via qBitTorrent over the Tor network. The downloaded files are stored outside the container and it is designed to self-destruct after use, leaving only its configuration.
 
 ## Requirements
 
@@ -10,15 +10,21 @@ Install Docker and Docker Compose:
 sudo apt install docker.io docker-compose -y
 ```
 
-## Deployment
+## Usage
 
-Start the container:
+Start the container.
 
 ```
 docker-compose up -d
 ```
 
-Stop the container:
+Navigate to http://120.0.0.1:8080
+
+Enter the username `qbittor` and password `qbittor`.
+
+Look for the downloaded files in the `/tmp` directory.
+
+Stop the container.
 
 ```
 docker-compose down

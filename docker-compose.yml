@@ -1,9 +1,11 @@
 services:
   qbittor:
-    image: qbittor
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    image: davift/qbittor:latest
+    # Uncomment the following lines to build localy.
+    # image: alpine:latest
+    # build:
+    #   context: .
+    #   dockerfile: ./Dockerfile
     volumes:
       - ./qBittorrent:/var/lib/qbittorrent/.config/qBittorrent/
       - /tmp:/TORRENT
