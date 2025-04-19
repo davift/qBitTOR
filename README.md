@@ -2,6 +2,8 @@
 
 This project provides a lightweight, ephemeral environment for securely downloading files via qBitTorrent over the Tor network. The downloaded files are stored outside the container and it is designed to self-destruct after use, leaving only its configuration.
 
+![qBitTorrent Web-UI](https://github.com/davift/qBitTOR/blob/main/image-01.png)
+
 ## Requirements
 
 Install Docker and Docker Compose:
@@ -12,10 +14,21 @@ sudo apt install docker.io docker-compose -y
 
 ## Usage
 
-Start the container.
+Easy way - Single command.
 
 ```
-docker-compose up -d
+sudo docker run --rm -p 8080:8080 -v /tmp:/TORRENT -v ./qBittorrent:/var/lib/qbittorrent/.config/qBittorrent/ davift/qbittor:latest
+```
+**Note:** the flag `--rm` make it self-destructible when stoped.
+
+Using Docker-Compose.
+
+Pull and Start
+
+```
+git clone https://github.com/davift/qBitTOR.git
+cd qBitTOR
+sudo docker-compose up -d
 ```
 
 Navigate to http://120.0.0.1:8080
@@ -27,7 +40,7 @@ Look for the downloaded files in the `/tmp` directory.
 Stop the container.
 
 ```
-docker-compose down
+sudo docker-compose down
 ```
 
 # Use Cases
