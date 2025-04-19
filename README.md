@@ -17,9 +17,13 @@ sudo apt install docker.io docker-compose -y
 Easy way - Single command.
 
 ```
-sudo docker run --rm -p 8080:8080 -v /tmp:/TORRENT -v ./qBittorrent:/var/lib/qbittorrent/.config/qBittorrent/ davift/qbittor:latest
+sudo docker run --rm -d -p 8080:8080 -v /tmp:/TORRENT -v ./qBittorrent:/var/lib/qbittorrent/.config/qBittorrent/ --name qBitTOR davift/qbittor:latest
 ```
-**Note:** the flag `--rm` make it self-destructible when stoped.
+**Note:** the flag `--rm` make it self-destructible when stoped with the following command.
+
+```
+sudo docker stop qBitTOR
+```
 
 Using Docker-Compose.
 
