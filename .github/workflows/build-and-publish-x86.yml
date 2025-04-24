@@ -21,8 +21,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/qbittor:latest .
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/qbittor:latest-x86 .
 
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/qbittor:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/qbittor:latest-x86
