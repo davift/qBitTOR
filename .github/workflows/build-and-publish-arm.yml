@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Image ARM
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest-arm
+    runs-on: ubuntu-24.04-arm
 
     steps:
     - name: Checkout code
