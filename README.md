@@ -4,6 +4,10 @@ This project provides a lightweight, ephemeral environment for securely download
 
 ![qBitTorrent Web-UI](https://github.com/davift/qBitTOR/blob/main/image-01.png)
 
+Also available in ARM / Android via Terminal.
+
+![qBitTorrent Web-UI Mobile](https://github.com/davift/qBitTOR/blob/main/image-02.png)
+
 ## Requirements
 
 Install Docker and Docker Compose:
@@ -14,7 +18,7 @@ sudo apt install docker.io docker-compose -y
 
 ## Usage
 
-Easy way - Single command.
+Easy way - Single command (x86/ARM).
 
 ```
 sudo docker run --rm -d -p 8080:8080 -v /tmp:/TORRENT --name qBitTOR davift/qbittor:latest
