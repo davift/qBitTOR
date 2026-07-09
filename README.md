@@ -20,6 +20,10 @@ sudo apt install docker.io docker-compose -y
 
 ## Usage
 
+**Security notes before exposing the Web-UI:**
+- The Web-UI ships with qBittorrent's default credentials (`admin` / `adminadmin`) on port 8080. Change the password immediately under **Tools → Options → Web UI**, and don't expose port 8080 beyond localhost/your LAN.
+- The Tor Project discourages BitTorrent over Tor (performance impact on the network, and residual deanonymization risk). This image proxies peer/tracker traffic and enables anonymous mode, but use it with that caveat in mind.
+
 Easy way - Single command (x86/ARM).
 
 ```

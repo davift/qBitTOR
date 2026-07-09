@@ -1,8 +1,6 @@
 FROM alpine:latest
 LABEL Name=qBitTOR Version=0.0.1
-RUN apk add --no-cache tor
-RUN apk add --no-cache qbittorrent-nox
-RUN apk add --no-cache su-exec
+RUN apk add --no-cache tor qbittorrent-nox su-exec netcat-openbsd
 RUN mkdir -p /TORRENT /var/lib/qbittorrent/.config/qBittorrent
 COPY entrypoint.sh /entrypoint.sh
 COPY qBittorrent/qBittorrent.conf /var/lib/qbittorrent/.config/qBittorrent/qBittorrent.conf
